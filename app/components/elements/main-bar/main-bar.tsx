@@ -13,16 +13,16 @@ interface Props {
 
 export default function MainBar (props: Props) {
     return (
-        <Tabs>
+        <Tabs className={style.tabs}>
             <TabList className={tabListStyle}>
                 <h1 className={style.title}>Painel Admin</h1>
                 {
                     props.tabs.map(
-                        tab => {
+                        (tab, key) => {
                             const classToImplement = tab.important 
                             ?   importantTabStyle
                             :   tabStyle;
-                            return <Tab className={classToImplement}>{tab.name}</Tab>
+                            return <Tab className={classToImplement} key={key}>{tab.name}</Tab>
                         }
                     )
                 }
@@ -30,9 +30,11 @@ export default function MainBar (props: Props) {
 
             {
                 props.tabs.map(
-                    tab => <TabPanel>{
-                        <tab.painel></tab.painel>
-                    }</TabPanel>
+                    (tab, key) => (
+                        <TabPanel key={key} className={style.painel} >
+                            <tab.painel></tab.painel>
+                        </TabPanel>
+                    )
                 )
             }
         </Tabs>

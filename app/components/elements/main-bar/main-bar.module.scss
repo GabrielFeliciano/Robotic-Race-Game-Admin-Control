@@ -11,10 +11,22 @@
     padding: 0 .5rem;
 }
 
+.tabs {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
 .tab {
     @include unselectable-text;
 
     &.important {
         color: darkviolet;
     }
+}
+
+.painel {
+    display: table-row;
+    width: 100%;
+    height: 100%;
 }
