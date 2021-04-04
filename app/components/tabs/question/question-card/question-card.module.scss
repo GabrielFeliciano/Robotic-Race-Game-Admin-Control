@@ -1,0 +1,61 @@
+@import '@style/default/app.scss';
+
+@mixin remove-input-text-style {
+    border: none;
+    outline: none;
+
+    &:disabled {
+        background-color: transparent;
+    }
+}
+
+.question-card {
+    padding: .5rem;
+    border: 1px grey solid;
+    // margin: 0 auto;
+    margin-bottom: 1rem;
+    width: 350px;
+    // min-width: 400px;
+
+    &:disabled {
+        filter: grayscale(100%);
+    }
+
+    & > * {
+        margin-bottom: .8rem;
+    }
+
+    .question {
+        @include remove-input-text-style;
+    }
+
+    .answers {
+        display: flex;
+        align-items: center;
+
+        .answer {
+            font-size: .8rem;
+            @include remove-input-text-style;
+        }
+    }
+
+    label {
+        font-size: .8rem;
+        display: block;
+        margin: 0;
+    }
+
+    input[type="checkbox"] {
+        display: inline-block;
+        margin-right: 1rem;
+
+        &:disabled {
+            background-color: transparent;
+            color: red;
+        }
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+}

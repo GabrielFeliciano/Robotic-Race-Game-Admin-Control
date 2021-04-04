@@ -1,3 +1,15 @@
+@mixin scale-on-hover ($scale: 1.05, $seconds: 1s) {
+    & {
+        animation: transform $seconds ease-in-out;
+    }
+
+    &:hover {
+        -webkit-font-smoothing: subpixel-antialiased;
+        transform: scale($scale);
+        zoom: 0.5;
+    }
+}
+
 @mixin unselectable-text {
     -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: none;     /* Firefox all */

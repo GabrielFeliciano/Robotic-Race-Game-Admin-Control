@@ -1,0 +1,24 @@
+.object-card-display {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    & > *:last-child {
+        justify-items: flex-end;
+    }
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &__container {
+        position: relative;
+        width: 100%;
+    }
+}

@@ -1,5 +1,9 @@
 import { TabInput } from '@constant/tabs/tabs.d';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, TabList, TabPanel, TabsProps } from 'react-tabs';
+
+import dynamic from 'next/dynamic';
+const Tabs = dynamic<TabsProps>(import('react-tabs').then(mod => mod.Tabs), { ssr: false });
+
 import 'react-tabs/style/react-tabs.css';
 import style from './main-bar.module.scss';
 
@@ -13,9 +17,11 @@ interface Props {
 
 export default function MainBar (props: Props) {
     return (
-        <Tabs className={style.tabs}>
+        <Tabs 
+        className={style.tabs} 
+        selectedTabPanelClassName={`react-tabs__tab-panel--selected ${style['active-painel']}`}>
             <TabList className={tabListStyle}>
-                <h1 className={style.title}>Painel Admin</h1>
+                <p className={style.title}>Painel Admin</p>
                 {
                     props.tabs.map(
                         (tab, key) => {
@@ -31,7 +37,7 @@ export default function MainBar (props: Props) {
             {
                 props.tabs.map(
                     (tab, key) => (
-                        <TabPanel key={key} className={style.painel} >
+                        <TabPanel key={key}>
                             <tab.painel></tab.painel>
                         </TabPanel>
                     )

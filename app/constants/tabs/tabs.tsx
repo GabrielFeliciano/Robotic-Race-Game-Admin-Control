@@ -1,11 +1,15 @@
 import { TabInput } from "./tabs.d";
-import QuestionFrame from "@element/question-frame/question-frame";
+import QuestionWindow from "@tab/question/question-window";
 
 const tabs: TabInput[] = [
     {
         name: "Perguntas",
         important: false,
-        painel: QuestionFrame
+        painel: QuestionWindow
+    }, {
+        name: "testes",
+        important: false,
+        painel: () => <h1>hello bois</h1>
     }
 ];
 

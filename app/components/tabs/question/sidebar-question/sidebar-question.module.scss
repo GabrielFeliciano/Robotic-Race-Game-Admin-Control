@@ -1,0 +1,45 @@
+@import '@style/default/app.scss';
+
+.sidebar {
+    display: flex;
+    flex-flow: column nowrap;
+
+    min-width: 180px;
+    // border-radius: .8rem;
+    z-index: 100;
+
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+
+    & > * {
+        display: inline-block;
+    }
+
+    button {
+        font-size: 1em;
+
+        outline: none;
+        border: 1px grey solid;
+        margin-bottom: .5rem;
+
+        line-height: 1.1em;
+        padding: .2em;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        @include scale-on-hover;
+    }
+}
+
+.right {
+    margin-left: 1.5rem;
+    padding-left: 1rem;
+    border-left: grey 1px solid;
+}
+
+.left {
+    margin-right: 1.5rem;
+    padding-right: 1rem;
+    border-right: grey 1px solid;
+}
