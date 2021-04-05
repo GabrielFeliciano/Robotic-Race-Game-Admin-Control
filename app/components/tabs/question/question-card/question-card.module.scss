@@ -12,10 +12,8 @@
 .question-card {
     padding: .5rem;
     border: 1px grey solid;
-    // margin: 0 auto;
     margin-bottom: 1rem;
     width: 350px;
-    // min-width: 400px;
 
     &:disabled {
         filter: grayscale(100%);
@@ -31,7 +29,14 @@
 
     .answers {
         display: flex;
+        flex-flow: row wrap;
+    }
+
+    .answer__container {
+        display: flex;
+        flex-grow: 1;
         align-items: center;
+        width: 50%;
 
         .answer {
             font-size: .8rem;

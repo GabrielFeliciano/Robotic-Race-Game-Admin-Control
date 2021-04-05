@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+import { getNodeAtPath, getPathToCorner, MosaicContext } from 'react-mosaic-component';
 import style from './sidebar-question.module.scss'
 
 interface SidebarQuestionProps {
@@ -5,16 +7,18 @@ interface SidebarQuestionProps {
 }
 
 const defaultProps: SidebarQuestionProps = {
-    orientation: 'left'
+    orientation: undefined
 }
 
 export default function SidebarQuestion (props: SidebarQuestionProps) {
     const options = {...defaultProps, ...props}
 
-    const classNameSidebar = [
+    const classNameSidebar = classNames(
         style.sidebar,
         style[options.orientation]
-    ].join(' ');
+    );
+
+    console.log(MosaicContext)
 
     return (
         <div className={classNameSidebar}>

@@ -2,10 +2,14 @@
 
 .sidebar {
     display: flex;
-    flex-flow: column nowrap;
+    // flex-flow: column nowrap;
+    flex-flow: row wrap;
+    padding: 1rem .4rem;
 
-    min-width: 180px;
-    // border-radius: .8rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // min-width: 20px;
     z-index: 100;
 
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
@@ -15,18 +19,30 @@
     }
 
     button {
+        flex-grow: 1;
+        width: 12rem;
+        margin: .3rem;
+
         font-size: 1em;
 
         outline: none;
-        border: 1px grey solid;
-        margin-bottom: .5rem;
+        background-color: lighten(#a7b6c2, 23);
+
+        // border-top: 2px solid lightslategray;
+        // border-left: 2px solid lightslategray;
+        // border-bottom: 2px solid darken(lightslategray, 20);
+        // border-right: 2px solid darken(lightslategray, 20);
+        border: 1px solid lightslategray;
+        box-shadow: grey .1rem .1rem;
+
+        padding: .3rem 0;
+        // margin-bottom: .5rem;
 
         line-height: 1.1em;
-        padding: .2em;
 
-        &:last-child {
-            margin: 0;
-        }
+        // &:last-child {
+        //     margin: 0;
+        // }
 
         @include scale-on-hover;
     }

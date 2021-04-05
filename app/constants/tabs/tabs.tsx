@@ -1,5 +1,6 @@
 import { TabInput } from "./tabs.d";
 import QuestionWindow from "@tab/question/question-window";
+import TreeDotsLoading from "@element/tree-dots-loading/tree-dots-loading";
 
 const tabs: TabInput[] = [
     {
@@ -9,7 +10,7 @@ const tabs: TabInput[] = [
     }, {
         name: "testes",
         important: false,
-        painel: () => <h1>hello bois</h1>
+        painel: () => <> <h1>hello bois</h1> <TreeDotsLoading /> </>
     }
 ];
 

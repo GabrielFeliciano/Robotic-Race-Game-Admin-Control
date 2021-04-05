@@ -17,12 +17,12 @@ export default function QuestionCard (props: Props) {
 
             <input type="text" defaultValue={question.question} className={style.question} />
 
-            <ul>{
+            <ul className={style.answers}>{
                 question.answers.map((answer, key) => {
                     const inputName = `answer-${question.id * key}`;
 
                     return (
-                        <div className={style.answers} key={key}>
+                        <div className={style['answer__container']} key={key}>
                             <input 
                             type="checkbox" 
                             defaultChecked={answer.isRight} 
