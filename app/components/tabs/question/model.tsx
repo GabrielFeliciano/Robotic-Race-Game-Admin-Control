@@ -2,7 +2,8 @@ import FlexLayout from "flexlayout-react";
 
 const model = FlexLayout.Model.fromJson({
     global: {
-        tabEnableFloat: true
+        tabEnableFloat: true,
+        borderAutoSelectTabWhenOpen: true
     },
     "borders": [
         {
@@ -31,21 +32,9 @@ const model = FlexLayout.Model.fromJson({
         },
         {
             "type": "border",
+            "autoSelectTabWhenOpen": true,
             "location": "bottom",
-            "children": [
-                {
-                    "type": "tab",
-                    "enableClose": false,
-                    "name": "Activity Blotter",
-                    "component": "grid",
-                },
-                {
-                    "type": "tab",
-                    "enableClose": false,
-                    "name": "Execution Blotter",
-                    "component": "grid",
-                }
-            ]
+            "children": []
         }
     ],
     layout: {
